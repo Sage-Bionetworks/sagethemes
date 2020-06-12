@@ -1,0 +1,19 @@
+Package: sagethemes
+Title: Sage-Branded Plot Themes
+Version: 0.0.0.9000
+Authors@R:
+    c(person(given = "Kara",
+             family = "Woo",
+             role = c("aut", "cre"),
+             email = "kara.woo@sagebionetworks.org",
+             comment = c(ORCID = "0000-0002-5125-4188")),
+      person(given = "Sage Bionetworks",
+             role = "cph"))
+Description: Color palettes that use Sage Bionetworks branded colors.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Suggests: 
+    testthat (>= 2.1.0)
