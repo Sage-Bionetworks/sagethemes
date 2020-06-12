@@ -24,6 +24,7 @@ Colors were developed by the Sage design team and are available in the
 list `sage_colors`.
 
 ``` r
+library("sagethemes")
 str(sage_colors, list.len = 5)
 #> List of 14
 #>  $ royal       : Named chr [1:7] "#D5CFE3" "#B2A5D1" "#907FBA" "#5A478F" ...
