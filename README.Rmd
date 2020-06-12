@@ -28,6 +28,15 @@ Bionetworks branded colors.
 remotes::install_github("Sage-Bionetworks/sagethemes")
 ```
 
+## Colors
+
+Colors were developed by the Sage design team and are available in the list
+`sage_colors`.
+
+```{r color-list}
+str(sage_colors, list.len = 5)
+```
+
 ---
 
 ## Code of Conduct
