@@ -3,6 +3,7 @@
 \name{scale_colour_sage_c}
 \alias{scale_colour_sage_c}
 \alias{scale_fill_sage_c}
+\alias{scale_color_sage_c}
 \title{Continuous gradient color scales}
 \usage{
 scale_colour_sage_c(

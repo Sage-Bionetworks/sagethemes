@@ -82,3 +82,8 @@ scale_fill_sage_c <- function(..., option, low = NULL, high = NULL,
     ...
   )
 }
+
+#' @rdname scale_sage_c
+#' @export
+#' @usage NULL
+scale_color_sage_c <- scale_colour_sage_c
