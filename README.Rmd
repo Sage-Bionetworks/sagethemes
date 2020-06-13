@@ -38,6 +38,19 @@ library("sagethemes")
 str(sage_colors, list.len = 5)
 ```
 
+## Usage
+
+sagethemes provides continuous, discrete, and binned scales.
+
+```{r continuous}
+library("ggplot2")
+library("sagethemes")
+
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  scale_fill_sage_c(option = "powder")
+```
+
 ---
 
 ## Code of Conduct
