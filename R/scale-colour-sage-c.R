@@ -47,7 +47,7 @@ scale_colour_sage_c <- function(..., option = "royal", low = NULL, high = NULL,
   }
   ggplot2::continuous_scale(
     aesthetics,
-    "gradient",
+    "sage_c",
     scales::seq_gradient_pal(low, high, space = "Lab"),
     na.value = na.value,
     guide = guide,
@@ -75,7 +75,7 @@ scale_fill_sage_c <- function(..., option, low = NULL, high = NULL,
   }
   ggplot2::continuous_scale(
     aesthetics,
-    "gradient",
+    "sage_c",
     scales::seq_gradient_pal(low, high, space = "Lab"),
     na.value = na.value,
     guide = guide,
