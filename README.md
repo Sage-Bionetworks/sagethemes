@@ -50,7 +50,7 @@ library("sagethemes")
 
 ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
-  scale_color_sage_d(level = "400")
+  scale_color_sage_d()
 ```
 
 <img src="man/figures/README-discrete-1.png" width="100%" />
