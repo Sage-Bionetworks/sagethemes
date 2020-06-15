@@ -8,12 +8,16 @@ Authors@R:
              email = "kara.woo@sagebionetworks.org",
              comment = c(ORCID = "0000-0002-5125-4188")),
       person(given = "Sage Bionetworks",
-             role = "cph"))
+             role = "cph"),
+      person(given = "Łukasz Dziedzic",
+             role = "cph",
+             comment = "Lato font creator"))
 Description: Color palettes that use Sage Bionetworks branded colors.
 License: MIT + file LICENSE
 Depends:
     R (>= 3.2.0)
 Imports:
+    extrafont,
     ggplot2,
     scales
 Suggests:
