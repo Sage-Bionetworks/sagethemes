@@ -11,21 +11,12 @@ scale_colour_sage_d(..., level = "500", direction = 1, aesthetics = "colour")
 scale_fill_sage_d(..., level = "500", direction = 1, aesthetics = "fill")
 }
 \arguments{
-\item{...}{
-  Arguments passed on to \code{\link[ggplot2:scale_colour_brewer]{ggplot2::scale_colour_brewer}}
-  \describe{
-    \item{\code{type}}{One of seq (sequential), div (diverging) or qual (qualitative)}
-    \item{\code{palette}}{If a string, will use that named palette. If a number, will index into
-the list of palettes of appropriate \code{type}. The list of available palettes can found
-in the Palettes section.}
-  }}
+\item{...}{Options passed to \code{\link[ggplot2:discrete_scale]{ggplot2::discrete_scale()}}}
 
 \item{level}{Color intensity. One of "200", "300", "400", "500", "600",
 "700", "800".}
 
-\item{direction}{Sets the order of colours in the scale. If 1, the default,
-colours are as output by \code{\link[RColorBrewer:brewer.pal]{RColorBrewer::brewer.pal()}}. If -1, the
-order of colours is reversed.}
+\item{direction}{Sets the order of colors in the scale}
 
 \item{aesthetics}{Character string or vector of character strings listing the
 name(s) of the aesthetic(s) that this scale works with. This can be useful, for

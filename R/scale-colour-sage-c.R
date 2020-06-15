@@ -3,9 +3,9 @@
 #' These create a gradient of colors based on the high and low value of a given
 #' hue from within the list of Sage branded colors.
 #'
-#' @inheritDotParams ggplot2::scale_colour_gradient
 #' @inheritParams ggplot2::scale_colour_gradient
 #' @inheritParams sage_gradient_pal
+#' @param ... Options passed to [ggplot2::continuous_scale()]
 #' @export
 #' @rdname scale_sage_c
 #' @examples
