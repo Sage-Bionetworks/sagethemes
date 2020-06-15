@@ -41,7 +41,11 @@ head(sage_colors, n = 3)
 
 ## Usage
 
-sagethemes provides continuous, discrete, and binned scales.
+sagethemes provides continuous, discrete, and binned scales. It also
+provides a default theme, `theme_sage()`, which is currently just
+`theme_gray()` but with Lato as the font family. Lato must be installed
+for this theme to work. See the Fonts section below, and `?import_lato`
+for mor information.
 
 ``` r
 library("ggplot2")
@@ -50,16 +54,28 @@ library("sagethemes")
 # discrete
 ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
-  scale_color_sage_d()
+  scale_color_sage_d() +
+  theme_sage()
 ```
 
 <img src="man/figures/README-discrete-1.png" width="100%" />
 
 ``` r
+
+ggplot(mpg, aes(x = factor(year), fill = class)) +
+  geom_bar() +
+  scale_fill_sage_d() +
+  theme_sage()
+```
+
+<img src="man/figures/README-discrete-2.png" width="100%" />
+
+``` r
 # continuous
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +
-  scale_fill_sage_c(option = "powder")
+  scale_fill_sage_c(option = "powder") +
+  theme_sage()
 ```
 
 <img src="man/figures/README-continuous-1.png" width="100%" />
@@ -68,7 +84,8 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 # binned
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +
-  scale_fill_sage_b(option = "powder")
+  scale_fill_sage_b(option = "powder") +
+  theme_sage()
 ```
 
 <img src="man/figures/README-binned-1.png" width="100%" />
@@ -90,7 +107,7 @@ import_lato()
 p <- ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
   scale_color_sage_d() +
-  theme_gray(base_family = "Lato")
+  theme_sage()
 
 # Save PDF plot and embed Lato font
 ggsave("plot.pdf", plot = p)
