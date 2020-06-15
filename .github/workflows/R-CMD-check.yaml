@@ -75,6 +75,8 @@ jobs:
       - name: Install dependencies
         run: |
           remotes::install_deps(dependencies = TRUE)
+          # Get dev ggplot2 until 3.3.2 is released
+          remotes::install_github("tidyverse/ggplot2")
           remotes::install_cran("rcmdcheck")
         shell: Rscript {0}
 
