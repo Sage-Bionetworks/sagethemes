@@ -47,6 +47,7 @@ sagethemes provides continuous, discrete, and binned scales.
 library("ggplot2")
 library("sagethemes")
 
+# discrete
 ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
   scale_color_sage_d()
@@ -55,12 +56,22 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
 <img src="man/figures/README-discrete-1.png" width="100%" />
 
 ``` r
+# continuous
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +
   scale_fill_sage_c(option = "powder")
 ```
 
 <img src="man/figures/README-continuous-1.png" width="100%" />
+
+``` r
+# binned
+ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
+  geom_tile() +
+  scale_fill_sage_b(option = "powder")
+```
+
+<img src="man/figures/README-binned-1.png" width="100%" />
 
 -----
 
