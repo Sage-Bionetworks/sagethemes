@@ -27,12 +27,7 @@ scale_fill_sage_c(
 )
 }
 \arguments{
-\item{...}{
-  Arguments passed on to \code{\link[ggplot2:scale_colour_gradient]{ggplot2::scale_colour_gradient}}
-  \describe{
-    \item{\code{space}}{colour space in which to calculate gradient. Must be "Lab" -
-other values are deprecated.}
-  }}
+\item{...}{Options passed to \code{\link[ggplot2:continuous_scale]{ggplot2::continuous_scale()}}}
 
 \item{option}{One of the Sage colors. See \code{names(sage_colors)} for a list.}
 

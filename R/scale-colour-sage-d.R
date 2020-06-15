@@ -3,9 +3,9 @@
 #' These create discrete color scales using the hues in the Sage branded colors
 #' list.
 #'
-#' @inheritDotParams ggplot2::scale_colour_brewer
 #' @inheritParams ggplot2::scale_colour_brewer
 #' @inheritParams sage_hue_pal
+#' @param ... Options passed to [ggplot2::discrete_scale()]
 #' @export
 #' @rdname scale_sage_d
 #' @examples
