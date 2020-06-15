@@ -73,6 +73,30 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 
 <img src="man/figures/README-binned-1.png" width="100%" />
 
+## Fonts
+
+Sage Bionetworks uses [Lato](http://www.latofonts.com/lato-free-fonts/).
+If you’ve installed Lato on your system, you should be able to use it in
+plots.
+
+However, to output to PDF, PostScript, or bitmap files on Windows, you
+need to register the font. sagethemes includes a copy of Lato, and you
+can load it with `import_lato()`. If saving to PDF you’ll also need to
+embed Lato in the PDF file.
+
+``` r
+import_lato()
+
+p <- ggplot(mpg, aes(displ, hwy, colour = class)) +
+  geom_point() +
+  scale_color_sage_d() +
+  theme_gray(base_family = "Lato")
+
+# Save PDF plot and embed Lato font
+ggsave("plot.pdf", plot = p)
+embed_fonts("plot.pdf", outfile = "plot_embed.pdf")
+```
+
 -----
 
 ## Code of Conduct
