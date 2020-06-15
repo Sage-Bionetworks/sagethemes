@@ -16,9 +16,7 @@ scale_fill_sage_d(..., level = "500", direction = 1, aesthetics = "fill")
 \item{level}{Color intensity. One of "200", "300", "400", "500", "600",
 "700", "800".}
 
-\item{direction}{Sets the order of colours in the scale. If 1, the default,
-colours are as output by \code{\link[RColorBrewer:brewer.pal]{RColorBrewer::brewer.pal()}}. If -1, the
-order of colours is reversed.}
+\item{direction}{Sets the order of colors in the scale}
 
 \item{aesthetics}{Character string or vector of character strings listing the
 name(s) of the aesthetic(s) that this scale works with. This can be useful, for
