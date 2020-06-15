@@ -66,5 +66,3 @@ sage_hue_pal <- function(level = "500", direction = 1) {
     unname(pal)
   }
 }
-
-

@@ -19,7 +19,10 @@
 sage_gradient_pal <- function(option = "royal", low = NULL, high = NULL) {
   if (!option %in% names(sage_colors)) {
     stop(
-      paste("`option` must be one of", paste(names(sage_colors), collapse = ", ")),
+      paste(
+        "`option` must be one of",
+        paste(names(sage_colors), collapse = ", ")
+      ),
       call. = FALSE
     )
   }
