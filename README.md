@@ -45,7 +45,7 @@ sagethemes provides continuous, discrete, and binned scales. It also
 provides a default theme, `theme_sage()`, which is currently just
 `theme_gray()` but with Lato as the font family. Lato must be installed
 for this theme to work. See the Fonts section below, and `?import_lato`
-for mor information.
+for more information.
 
 ``` r
 library("ggplot2")
