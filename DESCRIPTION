@@ -17,6 +17,7 @@ Imports:
     ggplot2,
     scales
 Suggests:
+    mockery,
     testthat (>= 2.1.0),
     vdiffr
 Encoding: UTF-8
