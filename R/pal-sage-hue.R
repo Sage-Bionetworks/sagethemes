@@ -8,7 +8,7 @@
 #' @examples
 #' sage_hue_pal()(5)
 #' sage_hue_pal(direction = -1)(5)
-#' sage_hue_pal(level = "800")(5)#'
+#' sage_hue_pal(level = "800")(5)
 sage_hue_pal <- function(level = "500", direction = 1) {
   if (!level %in% as.character(seq(200, 800, by = 100))) {
     warning(

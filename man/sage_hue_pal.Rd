@@ -21,5 +21,5 @@ Sage hue palette (discrete)
 \examples{
 sage_hue_pal()(5)
 sage_hue_pal(direction = -1)(5)
-sage_hue_pal(level = "800")(5)#'
+sage_hue_pal(level = "800")(5)
 }

@@ -5,11 +5,7 @@
 #'
 #' @inheritDotParams ggplot2::scale_colour_gradient
 #' @inheritParams ggplot2::scale_colour_gradient
-#' @param option One of the Sage colors. See `names(sage_colors)` for a list.
-#' @param low Optional starting value (if `NULL`, will default to the `"200"`
-#'   value for the chosen color option)
-#' @param high Optional ending value (if `NULL`, will default to the `"800"`
-#'   value for the chosen color option)
+#' @inheritParams sage_gradient_pal
 #' @export
 #' @rdname scale_sage_c
 #' @examples
@@ -32,23 +28,11 @@
 scale_colour_sage_c <- function(..., option = "royal", low = NULL, high = NULL,
                                 na.value = "grey50", guide = "colourbar",
                                 aesthetics = "colour") {
-  if (!option %in% names(sage_colors)) {
-    stop(
-      paste("`option` must be one of", paste(names(sage_colors), collapse = ", ")),
-      call. = FALSE
-    )
-  }
-  palette <- sage_colors[[option]]
-  if (is.null(low)) {
-    low <- palette[["200"]]
-  }
-  if (is.null(high)) {
-    high <- palette[["800"]]
-  }
+
   ggplot2::continuous_scale(
     aesthetics,
     "sage_c",
-    scales::seq_gradient_pal(low, high, space = "Lab"),
+    sage_gradient_pal(option = option, low = low, high = high),
     na.value = na.value,
     guide = guide,
     ...
@@ -60,23 +44,10 @@ scale_colour_sage_c <- function(..., option = "royal", low = NULL, high = NULL,
 scale_fill_sage_c <- function(..., option, low = NULL, high = NULL,
                                 na.value = "grey50", guide = "colourbar",
                                 aesthetics = "fill") {
-  if (!option %in% names(sage_colors)) {
-    stop(
-      paste("`option` must be one of", paste(names(sage_colors), collapse = ", ")),
-      call. = FALSE
-    )
-  }
-  palette <- sage_colors[[option]]
-  if (is.null(low)) {
-    low <- palette[["200"]]
-  }
-  if (is.null(high)) {
-    high <- palette[["800"]]
-  }
   ggplot2::continuous_scale(
     aesthetics,
     "sage_c",
-    scales::seq_gradient_pal(low, high, space = "Lab"),
+    sage_gradient_pal(option = option, low = low, high = high),
     na.value = na.value,
     guide = guide,
     ...
