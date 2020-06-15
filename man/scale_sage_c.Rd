@@ -36,11 +36,9 @@ other values are deprecated.}
 
 \item{option}{One of the Sage colors. See \code{names(sage_colors)} for a list.}
 
-\item{low}{Optional starting value (if \code{NULL}, will default to the \code{"200"}
-value for the chosen color option)}
+\item{low}{Colours for low and high ends of the gradient.}
 
-\item{high}{Optional ending value (if \code{NULL}, will default to the \code{"800"}
-value for the chosen color option)}
+\item{high}{Colours for low and high ends of the gradient.}
 
 \item{na.value}{Colour to use for missing values}
 
