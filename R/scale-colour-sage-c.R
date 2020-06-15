@@ -42,8 +42,8 @@ scale_colour_sage_c <- function(..., option = "royal", low = NULL, high = NULL,
 #' @export
 #' @rdname scale_sage_c
 scale_fill_sage_c <- function(..., option, low = NULL, high = NULL,
-                                na.value = "grey50", guide = "colourbar",
-                                aesthetics = "fill") {
+                              na.value = "grey50", guide = "colourbar",
+                              aesthetics = "fill") {
   ggplot2::continuous_scale(
     aesthetics,
     "sage_c",
