@@ -41,7 +41,7 @@ test_that("scale_fill_sage_b creates binned color scale", {
 
 test_that("binned scale reverts to continuous on older ggplot2 versions", {
   m <- mock("3.3.1")
-  stub(scale_colour_sage_b, "packageVersion", m)
+  stub(scale_colour_sage_b, "utils::packageVersion", m)
   set.seed(200)
   expect_warning({
     ggplot(df, aes(x, y)) +
