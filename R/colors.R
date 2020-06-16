@@ -1,6 +1,9 @@
 #' Complete list of Sage colors
 #'
 #' @export
+#' @examples
+#' head(sage_colors, n = 3)
+#' invisible(lapply(sage_colors, scales::show_col))
 # nolint start
 sage_colors <- list(
   royal        = c("200" = "#D5CFE3", "300" = "#B2A5D1", "400" = "#907FBA", "500" = "#5A478F", "600" = "#47337D", "700" = "#332069", "800" = "#251454"),

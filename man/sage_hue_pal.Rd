@@ -14,6 +14,7 @@ sage_hue_pal(level = "500", direction = 1)
 }
 \value{
 A function that gives the hex colors for the requested number of
+values
 }
 \description{
 Sage hue palette (discrete)

@@ -4,6 +4,7 @@
 #'   "700", "800".
 #' @param direction If -1, reverses the default order of the palette
 #' @return A function that gives the hex colors for the requested number of
+#'   values
 #' @export
 #' @examples
 #' sage_hue_pal()(5)

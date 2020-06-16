@@ -13,4 +13,8 @@ sage_colors
 \description{
 Complete list of Sage colors
 }
+\examples{
+head(sage_colors, n = 3)
+invisible(lapply(sage_colors, scales::show_col))
+}
 \keyword{datasets}

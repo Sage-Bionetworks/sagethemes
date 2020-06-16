@@ -2,7 +2,7 @@
 % Please edit documentation in R/pal-sage-gradient.R
 \name{sage_gradient_pal}
 \alias{sage_gradient_pal}
-\title{Sage gradient palette (continuous)}
+\title{Sage gradient palette}
 \usage{
 sage_gradient_pal(option = "royal", low = NULL, high = NULL)
 }
@@ -20,7 +20,9 @@ A function that can be called on values between 0 and 1 to return the
 hex color of the gradient at that point in the range.
 }
 \description{
-Sage gradient palette (continuous)
+Used for both continuous and binned scales, this function creates a gradient
+of colors from the given high and low hex codes (or, by default, from the
+"200" to "800" values for a chosen color option).
 }
 \examples{
 sage_gradient_pal()(1)

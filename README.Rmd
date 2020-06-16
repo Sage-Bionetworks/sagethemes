@@ -56,7 +56,6 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
   scale_color_sage_d() +
   theme_sage()
-
 ggplot(mpg, aes(x = factor(year), fill = class)) +
   geom_bar() +
   scale_fill_sage_d() +
@@ -72,7 +71,7 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 ```
 
 ```{r binned}
-# binned
+# binned -- note this requires ggplot2 version 3.3.1.9000 or greater
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +
   scale_fill_sage_b(option = "powder") +

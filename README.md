@@ -61,7 +61,6 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
 <img src="man/figures/README-discrete-1.png" width="100%" />
 
 ``` r
-
 ggplot(mpg, aes(x = factor(year), fill = class)) +
   geom_bar() +
   scale_fill_sage_d() +
@@ -81,7 +80,7 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 <img src="man/figures/README-continuous-1.png" width="100%" />
 
 ``` r
-# binned
+# binned -- note this requires ggplot2 version 3.3.1.9000 or greater
 ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
   geom_tile() +
   scale_fill_sage_b(option = "powder") +

@@ -1,4 +1,8 @@
-#' Sage gradient palette (continuous)
+#' Sage gradient palette
+#'
+#' Used for both continuous and binned scales, this function creates a gradient
+#' of colors from the given high and low hex codes (or, by default, from the
+#' "200" to "800" values for a chosen color option).
 #'
 #' @param option One of the Sage colors. See `names(sage_colors)` for a list.
 #' @param low Optional starting value (if `NULL`, will default to the `"200"`
