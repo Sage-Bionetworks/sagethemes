@@ -108,7 +108,6 @@
 </pre></div>
 <p><img src="reference/figures/README-discrete-1.png" width="100%"></p>
 <div class="sourceCode" id="cb4"><pre class="downlit">
-
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="kw">year</span>), fill = <span class="kw">class</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span>
   <span class="fu"><a href="reference/scale_colour_sage_d.html">scale_fill_sage_d</a></span>() <span class="op">+</span>
@@ -124,7 +123,7 @@
 </pre></div>
 <p><img src="reference/figures/README-continuous-1.png" width="100%"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit">
-<span class="co"># binned</span>
+<span class="co"># binned -- note this requires ggplot2 version 3.3.1.9000 or greater</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">waiting</span>, <span class="kw">eruptions</span>, fill = <span class="kw">density</span>)) <span class="op">+</span>
   <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span>() <span class="op">+</span>
   <span class="fu"><a href="reference/scale_colour_sage_b.html">scale_fill_sage_b</a></span>(option = <span class="st">"powder"</span>) <span class="op">+</span>
