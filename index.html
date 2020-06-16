@@ -68,14 +68,17 @@
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<div class="sourceCode" id="cb1"><pre class="r"><span class="kw pkg">remotes</span><span class="kw ns">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"Sage-Bionetworks/sagethemes"</span>)</pre></div>
+<div class="sourceCode" id="cb1"><pre class="downlit">
+<span class="kw">remotes</span>::<span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html">install_github</a></span>(<span class="st">"Sage-Bionetworks/sagethemes"</span>)
+</pre></div>
 </div>
 <div id="colors" class="section level2">
 <h2 class="hasAnchor">
 <a href="#colors" class="anchor"></a>Colors</h2>
 <p>Colors were developed by the Sage design team and are available in the list <code>sage_colors</code>.</p>
-<div class="sourceCode" id="cb2"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sagethemes"</span>)
-<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="no">sage_colors</span>, <span class="kw">n</span> <span class="kw">=</span> <span class="fl">3</span>)
+<div class="sourceCode" id="cb2"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sagethemes"</span>)
+<span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">sage_colors</span>, n = <span class="fl">3</span>)
 <span class="co">#&gt; $royal</span>
 <span class="co">#&gt;       200       300       400       500       600       700       800 </span>
 <span class="co">#&gt; "#D5CFE3" "#B2A5D1" "#907FBA" "#5A478F" "#47337D" "#332069" "#251454" </span>
@@ -86,38 +89,47 @@
 <span class="co">#&gt; </span>
 <span class="co">#&gt; $coral</span>
 <span class="co">#&gt;       200       300       400       500       600       700       800 </span>
-<span class="co">#&gt; "#F7E2DF" "#FFC5BD" "#FCA79A" "#F47E6C" "#DA614F" "#BD422F" "#8F1D0B"</span></pre></div>
+<span class="co">#&gt; "#F7E2DF" "#FFC5BD" "#FCA79A" "#F47E6C" "#DA614F" "#BD422F" "#8F1D0B"</span>
+</pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
 <a href="#usage" class="anchor"></a>Usage</h2>
 <p>sagethemes provides continuous, discrete, and binned scales. It also provides a default theme, <code><a href="reference/theme_sage.html">theme_sage()</a></code>, which is currently just <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_gray()</a></code> but with Lato as the font family. Lato must be installed for this theme to work. See the Fonts section below, and <code><a href="reference/import_lato.html">?import_lato</a></code> for more information.</p>
-<div class="sourceCode" id="cb3"><pre class="r"><span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"ggplot2"</span>)
+<div class="sourceCode" id="cb3"><pre class="downlit">
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="http://ggplot2.tidyverse.org">"ggplot2"</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sagethemes"</span>)
 
 <span class="co"># discrete</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">displ</span>, <span class="no">hwy</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">class</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
-  <span class="fu"><a href="reference/scale_sage_d.html">scale_color_sage_d</a></span>() +
-  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()</pre></div>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">displ</span>, <span class="kw">hwy</span>, colour = <span class="kw">class</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="reference/scale_colour_sage_d.html">scale_color_sage_d</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()
+</pre></div>
 <p><img src="reference/figures/README-discrete-1.png" width="100%"></p>
-<div class="sourceCode" id="cb4"><pre class="r">
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">x</span> <span class="kw">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="no">year</span>), <span class="kw">fill</span> <span class="kw">=</span> <span class="no">class</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() +
-  <span class="fu"><a href="reference/scale_sage_d.html">scale_fill_sage_d</a></span>() +
-  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()</pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit">
+
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(x = <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span>(<span class="kw">year</span>), fill = <span class="kw">class</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="reference/scale_colour_sage_d.html">scale_fill_sage_d</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()
+</pre></div>
 <p><img src="reference/figures/README-discrete-2.png" width="100%"></p>
-<div class="sourceCode" id="cb5"><pre class="r"><span class="co"># continuous</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">waiting</span>, <span class="no">eruptions</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">density</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span>() +
-  <span class="fu"><a href="reference/scale_sage_c.html">scale_fill_sage_c</a></span>(<span class="kw">option</span> <span class="kw">=</span> <span class="st">"powder"</span>) +
-  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()</pre></div>
+<div class="sourceCode" id="cb5"><pre class="downlit">
+<span class="co"># continuous</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">waiting</span>, <span class="kw">eruptions</span>, fill = <span class="kw">density</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="reference/scale_colour_sage_c.html">scale_fill_sage_c</a></span>(option = <span class="st">"powder"</span>) <span class="op">+</span>
+  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()
+</pre></div>
 <p><img src="reference/figures/README-continuous-1.png" width="100%"></p>
-<div class="sourceCode" id="cb6"><pre class="r"><span class="co"># binned</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">waiting</span>, <span class="no">eruptions</span>, <span class="kw">fill</span> <span class="kw">=</span> <span class="no">density</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span>() +
-  <span class="fu"><a href="reference/scale_sage_b.html">scale_fill_sage_b</a></span>(<span class="kw">option</span> <span class="kw">=</span> <span class="st">"powder"</span>) +
-  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()</pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit">
+<span class="co"># binned</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">faithfuld</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">waiting</span>, <span class="kw">eruptions</span>, fill = <span class="kw">density</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_tile.html">geom_tile</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="reference/scale_colour_sage_b.html">scale_fill_sage_b</a></span>(option = <span class="st">"powder"</span>) <span class="op">+</span>
+  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()
+</pre></div>
 <p><img src="reference/figures/README-binned-1.png" width="100%"></p>
 </div>
 <div id="fonts" class="section level2">
@@ -125,16 +137,18 @@
 <a href="#fonts" class="anchor"></a>Fonts</h2>
 <p>Sage Bionetworks uses <a href="http://www.latofonts.com/lato-free-fonts/">Lato</a>. If you’ve installed Lato on your system, you should be able to use it in plots.</p>
 <p>However, to output to PDF, PostScript, or bitmap files on Windows, you need to register the font. sagethemes includes a copy of Lato, and you can load it with <code><a href="reference/import_lato.html">import_lato()</a></code>. If saving to PDF you’ll also need to embed Lato in the PDF file.</p>
-<div class="sourceCode" id="cb7"><pre class="r"><span class="fu"><a href="reference/import_lato.html">import_lato</a></span>()
+<div class="sourceCode" id="cb7"><pre class="downlit">
+<span class="fu"><a href="reference/import_lato.html">import_lato</a></span>()
 
-<span class="no">p</span> <span class="kw">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="no">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="no">displ</span>, <span class="no">hwy</span>, <span class="kw">colour</span> <span class="kw">=</span> <span class="no">class</span>)) +
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() +
-  <span class="fu"><a href="reference/scale_sage_d.html">scale_color_sage_d</a></span>() +
+<span class="kw">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">displ</span>, <span class="kw">hwy</span>, colour = <span class="kw">class</span>)) <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span>() <span class="op">+</span>
+  <span class="fu"><a href="reference/scale_colour_sage_d.html">scale_color_sage_d</a></span>() <span class="op">+</span>
   <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span>()
 
 <span class="co"># Save PDF plot and embed Lato font</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span>(<span class="st">"plot.pdf"</span>, <span class="kw">plot</span> <span class="kw">=</span> <span class="no">p</span>)
-<span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/embed_fonts.html">embed_fonts</a></span>(<span class="st">"plot.pdf"</span>, <span class="kw">outfile</span> <span class="kw">=</span> <span class="st">"plot_embed.pdf"</span>)</pre></div>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span>(<span class="st">"plot.pdf"</span>, plot = <span class="kw">p</span>)
+<span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/embed_fonts.html">embed_fonts</a></span>(<span class="st">"plot.pdf"</span>, outfile = <span class="st">"plot_embed.pdf"</span>)
+</pre></div>
 <hr>
 </div>
 <div id="code-of-conduct" class="section level2">

@@ -114,24 +114,24 @@ given hue from within the list of Sage branded colors." />
 given hue from within the list of Sage branded colors.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>scale_colour_sage_b</span>(
-  <span class='no'>...</span>,
-  <span class='kw'>option</span> <span class='kw'>=</span> <span class='st'>"royal"</span>,
-  <span class='kw'>low</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>high</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>na.value</span> <span class='kw'>=</span> <span class='st'>"grey50"</span>,
-  <span class='kw'>guide</span> <span class='kw'>=</span> <span class='st'>"colourbar"</span>,
-  <span class='kw'>aesthetics</span> <span class='kw'>=</span> <span class='st'>"colour"</span>
+    <pre class="usage"><span class='fu'><a href='https://rdrr.io/pkg/sagethemes/man/scale_sage_b.html'>scale_colour_sage_b</a></span>(
+  <span class='kw'>...</span>,
+  option = <span class='st'>"royal"</span>,
+  low = <span class='kw'>NULL</span>,
+  high = <span class='kw'>NULL</span>,
+  na.value = <span class='st'>"grey50"</span>,
+  guide = <span class='st'>"colourbar"</span>,
+  aesthetics = <span class='st'>"colour"</span>
 )
 
-<span class='fu'>scale_fill_sage_b</span>(
-  <span class='no'>...</span>,
-  <span class='no'>option</span>,
-  <span class='kw'>low</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>high</span> <span class='kw'>=</span> <span class='kw'>NULL</span>,
-  <span class='kw'>na.value</span> <span class='kw'>=</span> <span class='st'>"grey50"</span>,
-  <span class='kw'>guide</span> <span class='kw'>=</span> <span class='st'>"colourbar"</span>,
-  <span class='kw'>aesthetics</span> <span class='kw'>=</span> <span class='st'>"fill"</span>
+<span class='fu'><a href='https://rdrr.io/pkg/sagethemes/man/scale_sage_b.html'>scale_fill_sage_b</a></span>(
+  <span class='kw'>...</span>,
+  <span class='kw'>option</span>,
+  low = <span class='kw'>NULL</span>,
+  high = <span class='kw'>NULL</span>,
+  na.value = <span class='st'>"grey50"</span>,
+  guide = <span class='st'>"colourbar"</span>,
+  aesthetics = <span class='st'>"fill"</span>
 )</pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -173,21 +173,21 @@ same time, via <code>aesthetics = c("colour", "fill")</code>.</p></td>
 
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'>"ggplot2"</span>)
+    <pre class="examples"><div class='input'><span class='fu'><a href='https://rdrr.io/r/base/library.html'>library</a></span>(<span class='st'><a href='http://ggplot2.tidyverse.org'>"ggplot2"</a></span>)
 
-<span class='no'>df_na</span> <span class='kw'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
-  <span class='kw'>value</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>1</span>, <span class='fl'>20</span>),
-  <span class='kw'>x</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>20</span>),
-  <span class='kw'>y</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>20</span>),
-  <span class='kw'>z1</span> <span class='kw'>=</span> <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>NA</span>, <span class='fl'>10</span>), <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>10</span>))
+<span class='kw'>df_na</span> <span class='op'>&lt;-</span> <span class='fu'><a href='https://rdrr.io/r/base/data.frame.html'>data.frame</a></span>(
+  value = <span class='fu'><a href='https://rdrr.io/r/base/seq.html'>seq</a></span>(<span class='fl'>1</span>, <span class='fl'>20</span>),
+  x = <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>20</span>),
+  y = <span class='fu'><a href='https://rdrr.io/r/stats/Uniform.html'>runif</a></span>(<span class='fl'>20</span>),
+  z1 = <span class='fu'><a href='https://rdrr.io/r/base/c.html'>c</a></span>(<span class='fu'><a href='https://rdrr.io/r/base/rep.html'>rep</a></span>(<span class='fl'>NA</span>, <span class='fl'>10</span>), <span class='fu'><a href='https://rdrr.io/r/stats/Normal.html'>rnorm</a></span>(<span class='fl'>10</span>))
 )
 
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>df_na</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>x</span>, <span class='no'>y</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>colour</span> <span class='kw'>=</span> <span class='no'>z1</span>)) +
-  <span class='fu'>scale_colour_sage_b</span>(<span class='kw'>option</span> <span class='kw'>=</span> <span class='st'>"apple"</span>)</div><div class='img'><img src='scale_sage_b-1.png' alt='' width='700' height='433' /></div><div class='input'>
-<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='no'>faithfuld</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='no'>waiting</span>, <span class='no'>eruptions</span>, <span class='kw'>fill</span> <span class='kw'>=</span> <span class='no'>density</span>)) +
-  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>geom_tile</a></span>() +
-  <span class='fu'>scale_fill_sage_b</span>(<span class='kw'>option</span> <span class='kw'>=</span> <span class='st'>"powder"</span>)</div><div class='img'><img src='scale_sage_b-2.png' alt='' width='700' height='433' /></div></pre>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>df_na</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>x</span>, <span class='kw'>y</span>)) <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_point.html'>geom_point</a></span>(<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(colour = <span class='kw'>z1</span>)) <span class='op'>+</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/sagethemes/man/scale_sage_b.html'>scale_colour_sage_b</a></span>(option = <span class='st'>"apple"</span>)</div><div class='img'><img src='scale_sage_b-1.png' alt='' width='700' height='433' /></div><div class='input'>
+<span class='fu'><a href='https://ggplot2.tidyverse.org/reference/ggplot.html'>ggplot</a></span>(<span class='kw'>faithfuld</span>, <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/aes.html'>aes</a></span>(<span class='kw'>waiting</span>, <span class='kw'>eruptions</span>, fill = <span class='kw'>density</span>)) <span class='op'>+</span>
+  <span class='fu'><a href='https://ggplot2.tidyverse.org/reference/geom_tile.html'>geom_tile</a></span>() <span class='op'>+</span>
+  <span class='fu'><a href='https://rdrr.io/pkg/sagethemes/man/scale_sage_b.html'>scale_fill_sage_b</a></span>(option = <span class='st'>"powder"</span>)</div><div class='img'><img src='scale_sage_b-2.png' alt='' width='700' height='433' /></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
