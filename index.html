@@ -47,7 +47,14 @@
   <a href="reference/index.html">Reference</a>
 </li>
       </ul>
-<ul class="nav navbar-nav navbar-right"></ul>
+<ul class="nav navbar-nav navbar-right">
+<li>
+  <a href="https://github.com/Sage-Bionetworks/sagethemes/">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 <!--/.nav-collapse -->
   </div>
@@ -77,7 +84,7 @@
 <a href="#colors" class="anchor"></a>Colors</h2>
 <p>Colors were developed by the Sage design team and are available in the list <code>sage_colors</code>.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit">
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sagethemes"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://sage-bionetworks.github.io/sagethemes">"sagethemes"</a></span>)
 <span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span>(<span class="kw">sage_colors</span>, n = <span class="fl">3</span>)
 <span class="co">#&gt; $royal</span>
 <span class="co">#&gt;       200       300       400       500       600       700       800 </span>
@@ -98,7 +105,7 @@
 <p>sagethemes provides continuous, discrete, and binned scales. It also provides a default theme, <code><a href="reference/theme_sage.html">theme_sage()</a></code>, which is currently just <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_gray()</a></code> but with Lato as the font family. Lato must be installed for this theme to work. See the Fonts section below, and <code><a href="reference/import_lato.html">?import_lato</a></code> for more information.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="http://ggplot2.tidyverse.org">"ggplot2"</a></span>)
-<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st">"sagethemes"</span>)
+<span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="st"><a href="https://sage-bionetworks.github.io/sagethemes">"sagethemes"</a></span>)
 
 <span class="co"># discrete</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span>(<span class="kw">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span>(<span class="kw">displ</span>, <span class="kw">hwy</span>, colour = <span class="kw">class</span>)) <span class="op">+</span>
@@ -159,7 +166,14 @@
   </div>
 
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
-    <div class="license">
+    <div class="links">
+<h2>Links</h2>
+<ul class="list-unstyled">
+<li>Browse source code at <br><a href="https://github.com/Sage-Bionetworks/sagethemes/">https://​github.com/​Sage-Bionetworks/​sagethemes/​</a>
+</li>
+</ul>
+</div>
+<div class="license">
 <h2>License</h2>
 <ul class="list-unstyled">
 <li><a href="LICENSE.html">Full license</a></li>
