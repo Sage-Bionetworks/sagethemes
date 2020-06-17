@@ -27,7 +27,7 @@ Bionetworks branded colors.
 ## Installation
 
 ```{r install, eval = FALSE}
-remotes::install_github("Sage-Bionetworks/sagethemes")
+remotes::install_github("Sage-Bionetworks/sagethemes", ref = "main")
 ```
 
 ## Colors
