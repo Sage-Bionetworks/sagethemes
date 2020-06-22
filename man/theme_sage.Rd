@@ -4,10 +4,21 @@
 \alias{theme_sage}
 \title{Sage ggplot2 theme}
 \usage{
-theme_sage(...)
+theme_sage(
+  base_size = 14,
+  base_family = "Lato",
+  base_line_size = base_size/22,
+  base_rect_size = base_size/22
+)
 }
 \arguments{
-\item{...}{Arguments passed to \code{\link[ggplot2:theme_grey]{ggplot2::theme_grey()}}}
+\item{base_size}{base font size, given in pts.}
+
+\item{base_family}{base font family}
+
+\item{base_line_size}{base size for line elements}
+
+\item{base_rect_size}{base size for rect elements}
 }
 \description{
 Right now just replaces the base font family with Lato and increases the base

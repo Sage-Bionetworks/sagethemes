@@ -3,8 +3,7 @@
 #' Right now just replaces the base font family with Lato and increases the base
 #' font size.
 #'
-#' @importFrom ggplot2 %+replace%
-#' @param ... Arguments passed to [ggplot2::theme_grey()]
+#' @inheritParams ggplot2::theme_grey
 #' @export
 #' @examples
 #' \dontrun{
@@ -17,9 +16,13 @@
 #'   scale_color_sage_d() +
 #'   theme_sage()
 #' }
-theme_sage <- function(...) {
-  ggplot2::theme_grey(...) %+replace%
-    ggplot2::theme(
-      text = ggplot2::element_text(family = "Lato", size = 14)
-    )
+theme_sage <- function(base_size = 14, base_family = "Lato",
+                       base_line_size = base_size / 22,
+                       base_rect_size = base_size / 22) {
+  ggplot2::theme_grey(
+    base_size = base_size,
+    base_family = base_family,
+    base_line_size = base_line_size,
+    base_rect_size = base_rect_size
+  )
 }
