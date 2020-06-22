@@ -20,6 +20,6 @@
 theme_sage <- function(...) {
   ggplot2::theme_grey(...) %+replace%
     ggplot2::theme(
-      text = ggplot2::element_text(family = "Lato", size = 16)
+      text = ggplot2::element_text(family = "Lato", size = 14)
     )
 }

@@ -5,7 +5,7 @@ test_that("theme_sage() changes font family to Lato", {
   expect_equal(t$text$family, "Lato")
 })
 
-test_that("theme_sage() changes base font size to 16", {
+test_that("theme_sage() changes base font size to 14", {
   t <- theme_sage()
-  expect_equal(t$text$size, 16)
+  expect_equal(t$text$size, 14)
 })
