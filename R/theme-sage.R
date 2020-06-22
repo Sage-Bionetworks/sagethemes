@@ -1,9 +1,10 @@
 #' Sage ggplot2 theme
 #'
-#' Right now just replaces the base font family with Lato.
+#' Right now just replaces the base font family with Lato and increases the base
+#' font size.
 #'
 #' @importFrom ggplot2 %+replace%
-#' @param ... Arguments passed to
+#' @param ... Arguments passed to [ggplot2::theme_grey()]
 #' @export
 #' @examples
 #' \dontrun{
@@ -19,6 +20,6 @@
 theme_sage <- function(...) {
   ggplot2::theme_grey(...) %+replace%
     ggplot2::theme(
-      text = ggplot2::element_text(family = "Lato")
+      text = ggplot2::element_text(family = "Lato", size = 16)
     )
 }

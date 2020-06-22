@@ -7,10 +7,11 @@
 theme_sage(...)
 }
 \arguments{
-\item{...}{Arguments passed to}
+\item{...}{Arguments passed to \code{\link[ggplot2:theme_grey]{ggplot2::theme_grey()}}}
 }
 \description{
-Right now just replaces the base font family with Lato.
+Right now just replaces the base font family with Lato and increases the base
+font size.
 }
 \examples{
 \dontrun{
