@@ -5,6 +5,8 @@ library("ggplot2")
 # Visual tests -----------------------------------------------------------------
 
 test_that("Color appears", {
+  skip_if_not_installed("systemfonts")
+
   dat <- data.frame(x = 1:5, y = 1:5)
   p <- ggplot(dat, aes(x, y, colour = y)) +
     geom_point() +
@@ -13,6 +15,8 @@ test_that("Color appears", {
 })
 
 test_that("Fill appears", {
+  skip_if_not_installed("systemfonts")
+
   dat <- data.frame(x = 1:5, y = 1:5)
   p <- ggplot(dat, aes(x, y, fill = y)) +
     geom_tile() +
