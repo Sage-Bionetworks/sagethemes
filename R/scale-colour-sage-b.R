@@ -28,9 +28,8 @@
 scale_colour_sage_b <- function(..., option = "royal", low = NULL, high = NULL,
                                 na.value = "grey50", guide = "colourbar",
                                 aesthetics = "colour") {
-  # TODO: replace with CRAN version after next ggplot2 release
-  if (utils::packageVersion("ggplot2") < "3.3.1.9000") {
-    warning("Binned scales are only available in ggplot2 versions >= 3.3.1.9000. Reverting to continuous.") # nolint
+  if (utils::packageVersion("ggplot2") < "3.3.2") {
+    warning("Binned scales are only available in ggplot2 versions >= 3.3.2. Reverting to continuous.") # nolint
     return(
       scale_colour_sage_c(
         ...,
@@ -58,9 +57,8 @@ scale_colour_sage_b <- function(..., option = "royal", low = NULL, high = NULL,
 scale_fill_sage_b <- function(..., option, low = NULL, high = NULL,
                               na.value = "grey50", guide = "colourbar",
                               aesthetics = "fill") {
-  # TODO: replace with CRAN version after next ggplot2 release
-  if (utils::packageVersion("ggplot2") < "3.3.1.9000") {
-    warning("Binned scales are only available in ggplot2 versions >= 3.3.1.9000. Reverting to continuous.") # nolint
+  if (utils::packageVersion("ggplot2") < "3.3.2") {
+    warning("Binned scales are only available in ggplot2 versions >= 3.3.2. Reverting to continuous.") # nolint
     return(
       scale_fill_sage_c(
         ...,
