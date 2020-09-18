@@ -12,6 +12,8 @@ df <- data.frame(
 )
 
 test_that("scale_colour_sage_b creates binned color scale", {
+  skip_if(packageVersion("ggplot2") < "3.3.2")
+
   p <- ggplot(df, aes(x, y)) +
     geom_point(aes(colour = z))
   p1 <- p + scale_colour_sage_b(option = "apple")
@@ -26,6 +28,8 @@ test_that("scale_colour_sage_b creates binned color scale", {
 })
 
 test_that("scale_fill_sage_b creates binned color scale", {
+  skip_if(packageVersion("ggplot2") < "3.3.2")
+
   p <- ggplot(df, aes(x, y)) +
     geom_tile(aes(fill = z))
   p1 <- p + scale_fill_sage_b(option = "apple")
@@ -54,6 +58,7 @@ test_that("binned scale reverts to continuous on older ggplot2 versions", {
 
 test_that("Binned guide is created", {
   skip_if_not_installed("systemfonts")
+  skip_if(packageVersion("ggplot2") < "3.3.2")
 
   dat <- data.frame(x = 1:5, y = 1:5)
   p <- ggplot(dat, aes(x, y, fill = y)) +
