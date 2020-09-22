@@ -21,15 +21,14 @@ theme_sage(
 \item{base_rect_size}{base size for rect elements}
 }
 \description{
-Right now just replaces the base font family with Lato and increases the base
-font size.
+A theme that uses Lato as the base font family (if available) and increases
+the base font size.
 }
 \examples{
 \dontrun{
 
 library("ggplot2")
 
-# Requires Lato font to be installed
 ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
   scale_color_sage_d() +

@@ -53,6 +53,8 @@ test_that("binned scale reverts to continuous on older ggplot2 versions", {
 # Visual tests -----------------------------------------------------------------
 
 test_that("Binned guide is created", {
+  skip_if_not_installed("systemfonts")
+
   dat <- data.frame(x = 1:5, y = 1:5)
   p <- ggplot(dat, aes(x, y, fill = y)) +
     geom_tile() +
