@@ -1,7 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# sagethemes
+sagethemes
+==========
 
 <!-- badges: start -->
 
@@ -12,13 +13,15 @@ status](https://github.com/Sage-Bionetworks/sagethemes/workflows/R-CMD-check/bad
 The sagethemes package provides plot color palettes and themes that use
 the Sage Bionetworks branded colors.
 
-## Installation
+Installation
+------------
 
 ``` r
 remotes::install_github("Sage-Bionetworks/sagethemes", ref = "main")
 ```
 
-## Colors
+Colors
+------
 
 Colors were developed by the Sage design team and are available in the
 list `sage_colors`.
@@ -39,11 +42,12 @@ head(sage_colors, n = 3)
 #> "#F7E2DF" "#FFC5BD" "#FCA79A" "#F47E6C" "#DA614F" "#BD422F" "#8F1D0B"
 ```
 
-## Usage
+Usage
+-----
 
 sagethemes provides continuous, discrete, and binned scales. It also
 provides a default theme, `theme_sage()`, which is currently just
-`theme_gray()` but with Lato as the font family and a larger default
+`theme_minimal()` but with Lato as the font family and a larger default
 font size. Lato must be installed for this theme to work. See the Fonts
 section below, and `?import_lato` for more information.
 
@@ -89,7 +93,8 @@ ggplot(faithfuld, aes(waiting, eruptions, fill = density)) +
 
 <img src="man/figures/README-binned-1.png" width="100%" />
 
-## Fonts
+Fonts
+-----
 
 Sage Bionetworks uses [Lato](http://www.latofonts.com/lato-free-fonts/).
 If you’ve installed Lato on your system, you should be able to use it in
@@ -113,9 +118,10 @@ ggsave("plot.pdf", plot = p)
 embed_fonts("plot.pdf", outfile = "plot_embed.pdf")
 ```
 
------
+------------------------------------------------------------------------
 
-## Code of Conduct
+Code of Conduct
+---------------
 
 Please note that the dccvalidator project is released with a
 [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By

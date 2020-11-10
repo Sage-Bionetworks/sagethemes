@@ -3,7 +3,7 @@
 #' A theme that uses Lato as the base font family (if available) and increases
 #' the base font size.
 #'
-#' @inheritParams ggplot2::theme_grey
+#' @inheritParams ggplot2::theme_minimal
 #' @export
 #' @examples
 #' \dontrun{
@@ -22,7 +22,7 @@ theme_sage <- function(base_size = 14, base_family = "Lato",
     base_family <- "" # fall back to ggplot2 default
     rlang::warn(message = "Lato font not found; falling back to ggplot2 default. Please install Lato on your system.")
   }
-  ggplot2::theme_grey(
+  ggplot2::theme_minimal(
     base_size = base_size,
     base_family = base_family,
     base_line_size = base_line_size,
