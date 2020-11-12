@@ -53,6 +53,8 @@ section below, and `?import_lato` for more information.
 
 ``` r
 library("ggplot2")
+library("extrafont")
+#> Registering fonts with R
 library("sagethemes")
 
 # discrete
@@ -134,6 +136,10 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
   scale_color_sage_d() +
   theme_sage() +
+  labs(
+    title = "Gas mileage",
+    subtitle = "Highway miles per gallon vs. engine displacement in liters"
+  ) +
   logo_image()
 ```
 

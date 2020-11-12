@@ -50,6 +50,7 @@ installed for this theme to work. See the Fonts section below, and
 
 ```{r discrete}
 library("ggplot2")
+library("extrafont")
 library("sagethemes")
 
 # discrete
@@ -116,6 +117,10 @@ ggplot(mpg, aes(displ, hwy, colour = class)) +
   geom_point() +
   scale_color_sage_d() +
   theme_sage() +
+  labs(
+    title = "Gas mileage",
+    subtitle = "Highway miles per gallon vs. engine displacement in liters"
+  ) +
   logo_image()
 ```
 
