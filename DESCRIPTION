@@ -17,6 +17,7 @@ License: MIT + file LICENSE
 Depends:
     R (>= 3.3.0)
 Imports:
+    cowplot,
     extrafont,
     ggplot2,
     rlang,
