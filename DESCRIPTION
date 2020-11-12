@@ -15,7 +15,7 @@ Authors@R:
 Description: Color palettes that use Sage Bionetworks branded colors.
 License: MIT + file LICENSE
 Depends:
-    R (>= 3.3.0)
+    R (>= 3.5.0)
 Imports:
     cowplot,
     extrafont,
