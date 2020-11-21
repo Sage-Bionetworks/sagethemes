@@ -19,7 +19,10 @@ Depends:
 Imports:
     cowplot,
     extrafont,
+    grid,
     ggplot2,
+    patchwork,
+    png,
     rlang,
     scales
 Suggests:
