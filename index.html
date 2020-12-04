@@ -97,6 +97,8 @@
 <p>sagethemes provides continuous, discrete, and binned scales. It also provides a default theme, <code><a href="reference/theme_sage.html">theme_sage()</a></code>, which is currently just <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal()</a></code> but with Lato as the font family and a larger default font size. Lato must be installed for this theme to work. See the Fonts section below, and <code><a href="reference/import_lato.html">?import_lato</a></code> for more information.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="http://ggplot2.tidyverse.org">"ggplot2"</a></span><span class="op">)</span>
+<span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://github.com/wch/extrafont">"extrafont"</a></span><span class="op">)</span>
+<span class="co">#&gt; Registering fonts with R</span>
 <span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="st"><a href="https://sage-bionetworks.github.io/sagethemes">"sagethemes"</a></span><span class="op">)</span>
 
 <span class="co"># discrete</span>
@@ -142,6 +144,23 @@
 <span class="co"># Save PDF plot and embed Lato font</span>
 <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggsave.html">ggsave</a></span><span class="op">(</span><span class="st">"plot.pdf"</span>, plot <span class="op">=</span> <span class="va">p</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/pkg/extrafont/man/embed_fonts.html">embed_fonts</a></span><span class="op">(</span><span class="st">"plot.pdf"</span>, outfile <span class="op">=</span> <span class="st">"plot_embed.pdf"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="add-logos" class="section level2">
+<h2 class="hasAnchor">
+<a href="#add-logos" class="anchor"></a>Add logos</h2>
+<p>sagethemes allows you to add a logo to the bottom right of your plot with the <code><a href="reference/logo_image.html">logo_image()</a></code> and <code><a href="reference/logo_image.html">logo_layout()</a></code> functions. By default it will use the Sage Bionetworks logo, but you can also provide your own image, for example a project-specific logo. This should be the last function call in your ggplot2 chain; you won’t be able to add additional ggplot2 elements to the initial plot after adding the logo.</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">mpg</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="va">displ</span>, <span class="va">hwy</span>, colour <span class="op">=</span> <span class="va">class</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="reference/scale_colour_sage_d.html">scale_color_sage_d</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="reference/theme_sage.html">theme_sage</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>
+    title <span class="op">=</span> <span class="st">"Gas mileage"</span>,
+    subtitle <span class="op">=</span> <span class="st">"Highway miles per gallon vs. engine displacement in liters"</span>
+  <span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="reference/logo_image.html">logo_image</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="reference/logo_image.html">logo_layout</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p><img src="reference/figures/README-add-logo-1.png" width="100%"></p>
 <hr>
 </div>
 <div id="code-of-conduct" class="section level2">
