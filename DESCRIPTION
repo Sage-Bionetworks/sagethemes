@@ -18,7 +18,10 @@ Depends:
     R (>= 3.3.0)
 Imports:
     extrafont,
+    grid,
     ggplot2,
+    patchwork,
+    png,
     rlang,
     scales
 Suggests:

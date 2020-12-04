@@ -2,6 +2,8 @@
 
 export(embed_fonts)
 export(import_lato)
+export(logo_image)
+export(logo_layout)
 export(sage_colors)
 export(sage_gradient_pal)
 export(sage_hue_pal)

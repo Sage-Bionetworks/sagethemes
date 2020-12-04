@@ -53,6 +53,8 @@ section below, and `?import_lato` for more information.
 
 ``` r
 library("ggplot2")
+library("extrafont")
+#> Registering fonts with R
 library("sagethemes")
 
 # discrete
@@ -117,6 +119,31 @@ p <- ggplot(mpg, aes(displ, hwy, colour = class)) +
 ggsave("plot.pdf", plot = p)
 embed_fonts("plot.pdf", outfile = "plot_embed.pdf")
 ```
+
+Add logos
+---------
+
+sagethemes allows you to add a logo to the bottom right of your plot
+with the `logo_image()` and `logo_layout()` functions. By default it
+will use the Sage Bionetworks logo, but you can also provide your own
+image, for example a project-specific logo. This should be the last
+function call in your ggplot2 chain; you won’t be able to add additional
+ggplot2 elements to the initial plot after adding the logo.
+
+``` r
+ggplot(mpg, aes(displ, hwy, colour = class)) +
+  geom_point() +
+  scale_color_sage_d() +
+  theme_sage() +
+  labs(
+    title = "Gas mileage",
+    subtitle = "Highway miles per gallon vs. engine displacement in liters"
+  ) +
+  logo_image() +
+  logo_layout()
+```
+
+<img src="man/figures/README-add-logo-1.png" width="100%" />
 
 ------------------------------------------------------------------------
 
