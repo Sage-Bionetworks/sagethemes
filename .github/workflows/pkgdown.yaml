@@ -41,9 +41,7 @@ jobs:
         run: |
           install.packages("remotes")
           remotes::install_deps(dependencies = TRUE)
-          # Get dev ggplot2 until 3.3.2 is released
-          remotes::install_github("tidyverse/ggplot2")
-          remotes::install_dev("pkgdown")
+          install.packages("pkgdown", type = "binary")
         shell: Rscript {0}
 
       - name: Install package
