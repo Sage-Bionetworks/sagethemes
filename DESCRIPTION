@@ -2,10 +2,14 @@ Package: sagethemes
 Title: Sage-Branded Plot Themes
 Version: 0.0.0.9003
 Authors@R:
-    c(person(given = "Kelsey",
-             family = "Montgomery",
+    c(person(given = "Abby",
+             family = "Vander Linden",
              role = c("aut", "cre"),
-             email = "kelsey.montgomery@sagebionetworks.org"),
+             email = "abby.vanderlinden@sagebase.org"),
+      person(given = "Kelsey",
+             family = "Montgomery",
+             role = "aut",
+             comment = c(ORCID = "0000-0002-0126-8944")),
       person(given = "Kara",
              family = "Woo",
              role = "aut",
