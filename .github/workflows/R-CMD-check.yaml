@@ -36,6 +36,7 @@ jobs:
       RSPM: ${{ matrix.config.rspm }}
       VDIFFR_RUN_TESTS: ${{ matrix.config.vdiffr }}
       VDIFFR_LOG_PATH: "../vdiffr.Rout.fail"
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v2
