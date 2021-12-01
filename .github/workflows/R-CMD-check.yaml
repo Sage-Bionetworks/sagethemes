@@ -24,12 +24,12 @@ jobs:
         config:
           - {os: macOS-latest,   r: '4.0.1', vdiffr: true}
           - {os: windows-latest, r: '4.0',   vdiffr: true}
-          - {os: ubuntu-20.04,   r: 'devel', vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"}
-          - {os: ubuntu-20.04,   r: '4.0',   vdiffr: true,  rspm: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"}
-          - {os: ubuntu-20.04,   r: '3.6',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"}
-          - {os: ubuntu-20.04,   r: '3.5',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"}
-          - {os: ubuntu-20.04,   r: '3.4',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"}
-          - {os: ubuntu-20.04,   r: '3.3',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/focal/latest"}
+          - {os: ubuntu-18.04,   r: 'devel', vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
+          - {os: ubuntu-18.04,   r: '4.0',   vdiffr: true,  rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
+          - {os: ubuntu-18.04,   r: '3.6',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
+          - {os: ubuntu-18.04,   r: '3.5',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
+          - {os: ubuntu-18.04,   r: '3.4',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
+          - {os: ubuntu-18.04,   r: '3.3',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
