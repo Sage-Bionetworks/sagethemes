@@ -27,8 +27,7 @@ scale_colour_sage_d <- function(..., level = "500", direction = 1,
                                 aesthetics = "colour") {
   ggplot2::discrete_scale(
     aesthetics,
-    "sage_d",
-    sage_hue_pal(level = level, direction = direction),
+    palette = sage_hue_pal(level = level, direction = direction),
     ...
   )
 }
@@ -39,8 +38,7 @@ scale_fill_sage_d <- function(..., level = "500", direction = 1,
                               aesthetics = "fill") {
   ggplot2::discrete_scale(
     aesthetics,
-    "sage_d",
-    sage_hue_pal(level = level, direction = direction),
+    palette = sage_hue_pal(level = level, direction = direction),
     ...
   )
 }
