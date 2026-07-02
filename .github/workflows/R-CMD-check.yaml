@@ -10,7 +10,7 @@ name: R-CMD-check
 
 # Increment this version when we want to clear cache
 env:
-  cache-version: v1
+  cache-version: v2
 
 jobs:
   R-CMD-check:
@@ -22,30 +22,33 @@ jobs:
       fail-fast: false
       matrix:
         config:
-          - {os: macOS-latest,   r: '4.0.1', vdiffr: true}
-          - {os: windows-latest, r: '4.0',   vdiffr: true}
-          - {os: ubuntu-18.04,   r: 'devel', vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
-          - {os: ubuntu-18.04,   r: '4.0',   vdiffr: true,  rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
-          - {os: ubuntu-18.04,   r: '3.6',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
-          - {os: ubuntu-18.04,   r: '3.5',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
-          - {os: ubuntu-18.04,   r: '3.4',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
-          - {os: ubuntu-18.04,   r: '3.3',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/bionic/latest"}
-
+          - {os: macOS-latest,   r: '4.6'}
+          - {os: windows-latest, r: '4.6'}
+          - {os: ubuntu-22.04,   r: 'devel', rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
+          - {os: ubuntu-22.04,   r: '4.6',  rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
+          - {os: ubuntu-22.04,   r: '4.5', rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
+          - {os: ubuntu-22.04,   r: '4.4', rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
+          - {os: ubuntu-22.04,   r: '4.3', rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
+          - {os: ubuntu-22.04,   r: '4.2', rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
       RSPM: ${{ matrix.config.rspm }}
-      VDIFFR_RUN_TESTS: ${{ matrix.config.vdiffr }}
-      VDIFFR_LOG_PATH: "../vdiffr.Rout.fail"
       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v7.0.0
 
-      - uses: r-lib/actions/setup-r@master
+      - uses: r-lib/actions/setup-r@v2
         with:
           r-version: ${{ matrix.config.r }}
 
-      - uses: r-lib/actions/setup-pandoc@master
+      - uses: r-lib/actions/setup-pandoc@v2
+
+      - name: Install system dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
 
       - name: Query dependencies
         run: |
@@ -56,34 +59,11 @@ jobs:
 
       - name: Cache R packages
         if: runner.os != 'Windows'
-        uses: actions/cache@v1
+        uses: actions/cache@v5.1.0
         with:
           path: ${{ env.R_LIBS_USER }}
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
-
-      - name: Install system dependencies (linux)
-        if: runner.os == 'Linux'
-        env:
-          RHUB_PLATFORM: linux-x86_64-ubuntu-gcc
-        run: |
-          Rscript -e "remotes::install_github('r-hub/sysreqs')"
-          sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
-          sudo -s eval "$sysreqs"
-
-      - name: Install system dependencies (mac)
-        if: runner.os == 'macOS'
-        run: |
-          brew install --cask xquartz
-          brew install pkg-config cairo
-
-      - name: Install dependencies
-        run: |
-          remotes::install_deps(dependencies = TRUE)
-          # Get dev ggplot2 until 3.3.2 is released
-          remotes::install_github("tidyverse/ggplot2")
-          remotes::install_cran("rcmdcheck")
-        shell: Rscript {0}
 
       - name: Session info
         run: |
@@ -93,11 +73,11 @@ jobs:
         shell: Rscript {0}
 
       - name: Check
-        env:
-          _R_CHECK_CRAN_INCOMING_: false
-          _R_CHECK_FORCE_SUGGESTS_: ${{ matrix.config.r >= '3.3' }}
-        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
-        shell: Rscript {0}
+        uses: r-lib/actions/check-r-package@v2
+        with:
+          args: 'c("--no-manual", "--as-cran")'
+          error-on: '"error"'
+          check-dir: '"check"'
 
       - name: Show testthat output
         if: always()

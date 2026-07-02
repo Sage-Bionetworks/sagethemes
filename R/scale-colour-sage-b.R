@@ -44,8 +44,7 @@ scale_colour_sage_b <- function(..., option = "royal", low = NULL, high = NULL,
   }
   ggplot2::binned_scale(
     aesthetics,
-    "sage_b",
-    sage_gradient_pal(option = option, low = low, high = high),
+    palette = sage_gradient_pal(option = option, low = low, high = high),
     na.value = na.value,
     guide = guide,
     ...
@@ -73,8 +72,7 @@ scale_fill_sage_b <- function(..., option, low = NULL, high = NULL,
   }
   ggplot2::binned_scale(
     aesthetics,
-    "sage_b",
-    sage_gradient_pal(option = option, low = low, high = high),
+    palette = sage_gradient_pal(option = option, low = low, high = high),
     na.value = na.value,
     guide = guide,
     ...

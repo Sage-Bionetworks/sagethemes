@@ -30,8 +30,7 @@ scale_colour_sage_c <- function(..., option = "royal", low = NULL, high = NULL,
                                 aesthetics = "colour") {
   ggplot2::continuous_scale(
     aesthetics,
-    "sage_c",
-    sage_gradient_pal(option = option, low = low, high = high),
+    palette = sage_gradient_pal(option = option, low = low, high = high),
     na.value = na.value,
     guide = guide,
     ...
@@ -45,8 +44,7 @@ scale_fill_sage_c <- function(..., option, low = NULL, high = NULL,
                               aesthetics = "fill") {
   ggplot2::continuous_scale(
     aesthetics,
-    "sage_c",
-    sage_gradient_pal(option = option, low = low, high = high),
+    palette = sage_gradient_pal(option = option, low = low, high = high),
     na.value = na.value,
     guide = guide,
     ...
