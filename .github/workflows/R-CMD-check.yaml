@@ -66,12 +66,13 @@ jobs:
 
       - name: Install system dependencies (linux)
         if: runner.os == 'Linux'
-        env:
-          RHUB_PLATFORM: r-release-linux-x86_64
-        run: |
-          Rscript -e "remotes::install_github('r-hub/sysreqs')"
-          sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
-          sudo -s eval "$sysreqs"
+        uses: r-lib/actions/setup-r-dependencies@v2
+        #env:
+        #  RHUB_PLATFORM: r-release-linux-x86_64
+        #run: |
+        #  Rscript -e "remotes::install_github('r-hub/sysreqs')"
+        #  sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
+        #  sudo -s eval "$sysreqs"
 
       - name: Install system dependencies (mac)
         if: runner.os == 'macOS'
