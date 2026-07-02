@@ -50,6 +50,9 @@ jobs:
 
       - name: Install system dependencies
         uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          extra-packages: any::rcmdcheck
+          needs: check
 
       - name: Query dependencies
         run: |
@@ -96,11 +99,16 @@ jobs:
         shell: Rscript {0}
 
       - name: Check
-        env:
-          _R_CHECK_CRAN_INCOMING_: false
-          _R_CHECK_FORCE_SUGGESTS_: ${{ matrix.config.r >= '4.1' }}
-        run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
-        shell: Rscript {0}
+        #env:
+        #  _R_CHECK_CRAN_INCOMING_: false
+        #  _R_CHECK_FORCE_SUGGESTS_: ${{ matrix.config.r >= '4.1' }}
+        uses: r-lib/actions/check-r-package@v2
+        with:
+          args: 'c("--no-manual", "--as-cran")'
+          error-on: '"error"'
+          check-dir: '"check"'
+        #run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
+        #shell: Rscript {0}
 
       - name: Show testthat output
         if: always()
