@@ -31,7 +31,6 @@ jobs:
           - {os: ubuntu-22.04,   r: '4.3',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
           - {os: ubuntu-22.04,   r: '4.2',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
           - {os: ubuntu-22.04,   r: '4.1',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
-          - {os: ubuntu-22.04,   r: '4.0',   vdiffr: false, rspm: "https://packagemanager.rstudio.com/all/__linux__/jammy/latest"}
 
     env:
       R_REMOTES_NO_ERRORS_FROM_WARNINGS: true
@@ -49,6 +48,9 @@ jobs:
 
       - uses: r-lib/actions/setup-pandoc@v2
 
+      - name: Install system dependencies
+        uses: r-lib/actions/setup-r-dependencies@v2
+
       - name: Query dependencies
         run: |
           install.packages('remotes')
@@ -64,9 +66,9 @@ jobs:
           key: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-${{ hashFiles('.github/depends.Rds') }}
           restore-keys: ${{ runner.os }}-${{ hashFiles('.github/R-version') }}-1-
 
-      - name: Install system dependencies (linux)
-        if: runner.os == 'Linux'
-        uses: r-lib/actions/setup-r-dependencies@v2
+      #- name: Install system dependencies (linux)
+      #  if: runner.os == 'Linux'
+      #  uses: r-lib/actions/setup-r-dependencies@v2
         #env:
         #  RHUB_PLATFORM: r-release-linux-x86_64
         #run: |
@@ -74,17 +76,17 @@ jobs:
         #  sysreqs=$(Rscript -e "cat(sysreqs::sysreq_commands('DESCRIPTION'))")
         #  sudo -s eval "$sysreqs"
 
-      - name: Install system dependencies (mac)
-        if: runner.os == 'macOS'
-        run: |
-          brew install --cask xquartz
-          brew install pkg-config cairo
+      #- name: Install system dependencies (mac)
+      #  if: runner.os == 'macOS'
+      #  run: |
+      #    brew install --cask xquartz
+      #    brew install pkg-config cairo
 
-      - name: Install dependencies
-        run: |
-          remotes::install_deps(dependencies = TRUE)
-          remotes::install_cran("rcmdcheck")
-        shell: Rscript {0}
+      #- name: Install dependencies
+      #  run: |
+      #    remotes::install_deps(dependencies = TRUE)
+      #    remotes::install_cran("rcmdcheck")
+      #  shell: Rscript {0}
 
       - name: Session info
         run: |
@@ -96,7 +98,7 @@ jobs:
       - name: Check
         env:
           _R_CHECK_CRAN_INCOMING_: false
-          _R_CHECK_FORCE_SUGGESTS_: ${{ matrix.config.r >= '4.0' }}
+          _R_CHECK_FORCE_SUGGESTS_: ${{ matrix.config.r >= '4.1' }}
         run: rcmdcheck::rcmdcheck(args = c("--no-manual", "--as-cran"), error_on = "warning", check_dir = "check")
         shell: Rscript {0}
 
